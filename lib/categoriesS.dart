@@ -8,7 +8,7 @@ class CategoriesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('MealsApp'),
-      ),
+      ) ,
       body: GridView(
         children: dummy.map((ci) {
           return CategoriesItems(ci.title, ci.color);
