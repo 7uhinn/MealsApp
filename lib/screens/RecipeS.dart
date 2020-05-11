@@ -7,6 +7,7 @@ class RecipeScreen extends StatelessWidget {
   // final String cid;
 
   // RecipeScreen(this.title, this.cid);
+  static const routeName = '/recipes';
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +27,7 @@ class RecipeScreen extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (context, idx) {
           return RecipeItems(
+            id: recipe[idx].id,
             title: recipe[idx].title,
             imgURL: recipe[idx].imgURL,
             duration: recipe[idx].duration,

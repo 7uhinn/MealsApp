@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import '../screens/procedureS.dart';
 import '../models/recipesM.dart';
 
 class RecipeItems extends StatelessWidget {
+  final String id;
   final String title;
   final String imgURL;
   final int duration;
@@ -9,13 +11,19 @@ class RecipeItems extends StatelessWidget {
   final Affordability affordability;
 
   RecipeItems(
-      {this.title,
+      {this.id,
+      this.title,
       this.imgURL,
       this.duration,
       this.complexity,
       this.affordability});
 
-  void selectRecipe() {}
+  void selectRecipe(BuildContext context) {
+    Navigator.of(context).pushNamed(
+      ProcedureScreen.routeName,
+      arguments: id,
+    );
+  }
 
   String get complexityText {
     switch (complexity) {
@@ -42,7 +50,7 @@ class RecipeItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: selectRecipe,
+      onTap: () => selectRecipe(context),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Card(
