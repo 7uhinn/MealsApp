@@ -16,7 +16,7 @@ const dummy =  const [
   ),
   Categories(
     id: 'c3',
-    title: 'Hamburgers',
+    title: 'Burgers',
     color: Colors.orange,
   ),
   Categories(
